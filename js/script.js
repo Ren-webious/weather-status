@@ -222,10 +222,21 @@ main : {temp}
 
  } = weatherData;
 
-const forecastItem =`
+const dateTaken = new Date (date)
+
+const dateOption = {
+    
+    day : '2-digit',
+    month:'short'
+
+}
+
+const dateResult = dateTaken.toLocaleDateString ( 'en-US' ,dateOption)
+
+ const forecastItem =`
 
 <div class="forcast-item">
-<h5 class="forcast-item-data">05 Aug</h5>
+<h5 class="forcast-item-data">${dateResult}</h5>
 <img src="./media/${getWeatherIcon( id )}" alt="" class="forecast-item-img">
 <h5 class="forecast-item-temp">${Math.round(temp)}°C</h5>
   </div>
